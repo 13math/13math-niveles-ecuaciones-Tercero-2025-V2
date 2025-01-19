@@ -18,7 +18,8 @@ body {
 }
 
 #admin-container {
-    max-width: 800px; /* Ancho específico para el contenedor de Administrador */
+            max-width: none;
+            width: fit-content;
 }
 
 .hidden {
