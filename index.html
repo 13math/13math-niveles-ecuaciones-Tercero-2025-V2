@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Caminante Perdido - Niveles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>El Caminante Perdido</h1>
+
+    <!-- Contenedor de inicio de sesión -->
+    <div class="container" id="login-container">
+        <h2>Iniciar Sesión o Registrarse</h2>
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" placeholder="Nombre de usuario" aria-label="Nombre de usuario">
+        <button onclick="login()">Iniciar Sesión</button>
+        <button onclick="requestAdminAccess()">Ver Registro de Usuarios</button>
+        <p class="feedback" id="login-feedback" role="alert"></p>
+    </div>
+
+    <!-- Contenedor del juego -->
+    <div class="container hidden" id="game-container">
+        <h2>Bienvenido, <span id="player-name"></span></h2>
+        <p>Nivel actual: <span id="current-level">Bronce</span></p>
+        <p class="equation" id="equation"></p>
+        <label for="answer">Ingresa el valor de x:</label>
+        <input type="text" id="answer" placeholder="Ingresa el valor de x" aria-label="Respuesta">
+        <button onclick="checkAnswer()">Enviar</button>
+        <button onclick="logout()">Cerrar Sesión</button>
+        <p class="feedback" id="game-feedback" role="alert"></p>
+    </div>
+
+    <!-- Contenedor del administrador -->
+    <div class="container hidden" id="admin-container">
+        <h2>Registro de Usuarios</h2>
+        <table aria-label="Registro de usuarios">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Bronce</th>
+                    <th>Plata</th>
+                    <th>Oro</th>
+                    <th>Diamante</th>
+                    <th>Maestro</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="user-records">
+                <!-- Los registros se generarán dinámicamente -->
+            </tbody>
+        </table>
+        <button onclick="downloadRecords()">Descargar Registro</button>
+        <button onclick="logoutAdmin()">Cerrar Vista de Administrador</button>
+    </div>
+
+    <!-- Contenedor de felicitación -->
+    <div class="container hidden" id="congratulations-container">
+        <h2>¡Felicidades, <span id="winner-name"></span>!</h2>
+        <p>Has completado todos los niveles y alcanzado el nivel Maestro.</p>
+        <button onclick="logout()">Cerrar Sesión</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
